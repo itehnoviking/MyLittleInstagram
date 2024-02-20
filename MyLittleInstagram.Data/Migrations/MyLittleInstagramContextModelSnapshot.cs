@@ -24,14 +24,14 @@ namespace MyLittleInstagram.Data.Migrations
 
             modelBuilder.Entity("MyLittleInstagram.Data.Entities.Friendship", b =>
                 {
-                    b.Property<long>("User1Id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("User1Id")
+                        .HasColumnType("uuid");
 
-                    b.Property<long>("User2Id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("User2Id")
+                        .HasColumnType("uuid");
 
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
 
                     b.HasKey("User1Id", "User2Id");
 
@@ -42,11 +42,9 @@ namespace MyLittleInstagram.Data.Migrations
 
             modelBuilder.Entity("MyLittleInstagram.Data.Entities.Image", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -62,8 +60,8 @@ namespace MyLittleInstagram.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -74,11 +72,9 @@ namespace MyLittleInstagram.Data.Migrations
 
             modelBuilder.Entity("MyLittleInstagram.Data.Entities.RefreshToken", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -106,8 +102,8 @@ namespace MyLittleInstagram.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -118,11 +114,9 @@ namespace MyLittleInstagram.Data.Migrations
 
             modelBuilder.Entity("MyLittleInstagram.Data.Entities.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Email")
                         .IsRequired()
