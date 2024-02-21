@@ -6,14 +6,12 @@ public class JwtAuthDto
     {
         Id = user.Id;
         Email = user.Email;
-        RoleNames = user.RoleNames;
         JwtToken = jwtToken;
         RefreshToken = refreshToken;
     }
 
-    public Guid Id { get; set; }
+    public uint Id { get; set; }
     public string Email { get; set; }
-    public string[] RoleNames { get; set; }
     public string JwtToken { get; set; }
     public string RefreshToken { get; set; }
 }

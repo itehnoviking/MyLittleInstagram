@@ -50,7 +50,6 @@ public class AccountController : ControllerBase
                     return BadRequest(new ResponseMessage { Message = "Username or password is incorrect" });
                 }
 
-
                 SetTokenCookie(response.RefreshToken);
 
                 return Ok(_mapper.Map<AuthenticateResponse>(response));

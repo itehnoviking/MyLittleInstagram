@@ -5,4 +5,5 @@ namespace MyLittleInstagram.Core.Interfaces.Services;
 public interface IAccountService
 {
     Task<UserDto> GetUserByEmailAsync(string email);
+    Task<bool> CheckPasswordByEmailAsync(LoginDto dto);
 }

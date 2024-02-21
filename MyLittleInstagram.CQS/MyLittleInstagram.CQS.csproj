@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\CommandHandlers\" />
-    <Folder Include="Models\Commands\" />
-    <Folder Include="Models\Queries\AccountQueries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="Serilog" Version="3.1.1" />

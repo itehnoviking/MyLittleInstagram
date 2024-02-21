@@ -29,6 +29,11 @@ public class GetUserByEmailQueryHandler : IRequestHandler<GetUserByEmailQuery, U
                 .Select(user => _mapper.Map<UserDto>(user))
                 .FirstOrDefaultAsync(cancellationToken);
 
+            if (user == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             return user;
         }
         catch (Exception ex)
